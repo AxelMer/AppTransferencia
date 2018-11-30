@@ -5,7 +5,7 @@ CardTitle, CardText, Col } from 'reactstrap';
 import Header from '../header';
 import Tranferir from './transferir';
 import store from '../../Store/index';
-import firebase from '../../Database/firebase';
+//import firebase from '../../Database/firebase';
 import { cambiarDinero } from '../../Acciones/acciones';
 
 export default class Perfil extends React.Component{
@@ -16,22 +16,7 @@ cambiarDinero(event){
 
     render(){
         const { uid, displayName, email, dinero } = store.getState().usuario;
-        const settings = {timestampsInSnapshots: true};
-        db.settings(settings);
-        const referencia = database.ref('/persona').once("value")
-        .then(() => {
-          snapshot.forEach((doc) => {
-            console.log(doc.id, '=>', doc.data());
-                if (uid === doc) {
-                    cambiarDinero(doc.data().dinero)
-                }else{
-                    console.log("TODO MAL")
-                }
-          });
-        })
-        .catch((err) => {
-          console.log('Error getting documents', err);
-        });
+        //const referencia = firebase.database.ref('/persona').once("value")
     
         return(
             <main>
