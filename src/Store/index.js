@@ -5,6 +5,7 @@ const store = createStore({
         displayName: '',
         email: '',
         contraseña: '',
+        dinero: 0 ,
     },
     error: '',
     user: null,

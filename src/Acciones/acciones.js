@@ -17,6 +17,11 @@ export const cambiarContraseña = (contraseña) => {
         s.usuario.contraseña = contraseña
     })
 }
+export const cambiarDinero = (dinero) => {
+    store.update(s =>{
+        s.usuario.dinero = dinero
+    })
+}
 export const guardarUsuario = (usuario) => {
     store.update(s => {
         s.usuario = usuario

@@ -3,22 +3,36 @@ import {
 InputGroup, InputGroupAddon, Input, Card, CardHeader, CardBody,
 CardTitle, CardText, Col } from 'reactstrap';
 import Header from '../header';
+import Tranferir from './transferir';
 import store from '../../Store/index';
+import firebase from '../../Database/firebase';
+import { cambiarDinero } from '../../Acciones/acciones';
 
-import { activeTab } from '../../Acciones/acciones';
 export default class Perfil extends React.Component{
-constructor(props) {
-    super(props);
-    this.toggle = this.toggle.bind(this);
-}
-toggle(tab) {
-    if (activeTab !== tab) {
-        activeTab(tab)
-    }
+cambiarDinero(event){
+    const nuevoDinero = event.target.value;
+    cambiarDinero(nuevoDinero);
 }
 
     render(){
         const { uid, displayName, email, dinero } = store.getState().usuario;
+        const settings = {timestampsInSnapshots: true};
+        db.settings(settings);
+        const referencia = database.ref('/persona').once("value")
+        .then(() => {
+          snapshot.forEach((doc) => {
+            console.log(doc.id, '=>', doc.data());
+                if (uid === doc) {
+                    cambiarDinero(doc.data().dinero)
+                }else{
+                    console.log("TODO MAL")
+                }
+          });
+        })
+        .catch((err) => {
+          console.log('Error getting documents', err);
+        });
+    
         return(
             <main>
                 <Header/>
@@ -30,7 +44,7 @@ toggle(tab) {
                             <Card>
                                 <CardHeader>Dinero Disponible</CardHeader>
                                 <CardBody>
-                                <CardTitle>$ {dinero} </CardTitle>
+                                <CardTitle>$ {dinero}</CardTitle>
                                 <CardText></CardText>
                             </CardBody>
                              </Card>
@@ -66,6 +80,7 @@ toggle(tab) {
                                       </div>
                                   </form>
                                 <hr/>
+                                <Tranferir/>
                             </div>
                         </div>
                         </div>

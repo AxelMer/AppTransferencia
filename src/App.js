@@ -13,7 +13,6 @@ class App extends Component {
         guardarUsuario(user)
         console.log(guardarUsuario)
         autenticado(true)
-        console.log(user);
       }
     });
   };

@@ -44,8 +44,6 @@ cerrarSesion(e) {
                                     />
                                 </DropdownToggle>
                                 <DropdownMenu>
-                                    <DropdownItem header>Perfil</DropdownItem>
-                                    <DropdownItem divider />
                                     <DropdownItem onClick={this.cerrarSesion}>Cerrar Sesion!</DropdownItem>
                                 </DropdownMenu>
                             </Dropdown>
