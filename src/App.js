@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Login from './Componentes/Login';
 import firebase from './Database/firebase';
-import Perfil from './Componentes/PerfilUsuario/Perfil';
+import Perfil from './Componentes/Perfil';
 import { guardarUsuario, autenticado  } from './Acciones/acciones';
 import store from './Store/index';
 

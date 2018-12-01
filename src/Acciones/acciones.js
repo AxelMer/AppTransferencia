@@ -1,4 +1,4 @@
-import store from '../Store'
+import store from '../Store';
 
 //Creamos funciones a los onChange para realizar la actualizacion de datos 
 
@@ -32,8 +32,18 @@ export const autenticado = (autenticado) => {
         s.autenticado = autenticado
     })
 }
+export const verificar = (verificar) => {
+    store.update(s => {
+        s.verificar = verificar
+    })
+}
 export const activeTab = (activeTab) =>{
     store.update(s => {
         s.activeTab = activeTab
+    })
+}
+export const collapse = (collapse) =>{
+    store.update(s => {
+        s.collapse = collapse
     })
 }

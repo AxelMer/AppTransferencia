@@ -22,27 +22,28 @@ toggle(tab) {
 CrearCuenta(e){
     const {email, contraseña, displayName} = store.getState().usuario;
     e.preventDefault();
+    //Creamos una Authentication de firebase
+    //Tomando el email y contraseña
     firebase.auth().createUserWithEmailAndPassword(email, contraseña)
     .then((u)=>{
-        alert("Cuenta creada exitosamente!");
+        //Agarramos el usuario creado y realizamos una actualizacion de nombre en displayName
             var user = firebase.auth().currentUser;
             user.updateProfile({
             displayName: document.getElementById('nombreyape').value,
             })
-            .then(function(){
-                    firebase.database().ref(`usuarios/${user.uid}`).set({
-                        name: displayName,
-                        email: email,
-                        contraseña: contraseña,
-                        dinero: 0,
-                    })
-                    .then(function(){
+        //Creamos un documento en el Database de firebase
+            firebase.database().ref(`usuarios/${user.uid}`).set({
+                    uid: user.uid,
+                    name: displayName,
+                    email: email,
+                    contraseña: contraseña,
+                    dinero: 0,
+            }).then(function(exito){
                             console.log("Documento creado!");
                         })
                         .catch(function(error) {
                             console.error("Error writing document: ", error);
                         });
-            }).catch(function(error) {});
     })
     .catch((error) => {
         console.log(error);
