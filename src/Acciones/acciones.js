@@ -27,6 +27,11 @@ export const guardarUsuario = (usuario) => {
         s.usuario = usuario
     })
 }
+export const guardarLista = (ListaDatos) => {
+    store.update(s => {
+        s.ListaDatos = ListaDatos
+    })
+}
 export const autenticado = (autenticado) => {
     store.update(s => {
         s.autenticado = autenticado
