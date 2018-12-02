@@ -7,7 +7,7 @@ const store = createStore({
         contraseña: '',
         dinero: 0 ,
     },
-    error: '',
+    receptor:'',
     user: null,
     autenticado: false,
     verificar: false,
