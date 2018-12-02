@@ -1,5 +1,5 @@
 
-## Table of Contents
+## Contenido
 
 - [Live Demo](#Live Demo)
 - [Sending Feedback](#sending-feedback)
@@ -21,7 +21,7 @@ In most cases bumping the `react-scripts` version in `package.json` and running 
 
 We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
 
-## Sending Feedback
+## Introduccion
 
 We are always open to [your feedback](https://github.com/facebook/create-react-app/issues).
 
