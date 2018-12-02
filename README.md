@@ -2,8 +2,9 @@
 ## Contenido
 
 - [Live Demo](#Live Demo)
-- [Sending Feedback](#sending-feedback)
+- [Introduccion](#Introduccion)
 - [Folder Structure](#folder-structure)
+
 ## Live Demo
 
 Create React App is divided into two packages:
