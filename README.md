@@ -6,8 +6,8 @@ Proyecto final de Taller de Práctica II de 2do año. Aplicacion para realizar t
 
 - [Live Demo](#live-demo)
 - [Caracteristicas](#caracteristicas)
-- [Instalacion Local](#instalacion-local)
-  - [Requisitos](#requisistos)
+- [Instalación Local](#instalación-local)
+  - [Requisitos](#requisitos)
 - [Documentacion](#documentacion)
 - [Autores](#autores)
 
@@ -37,6 +37,8 @@ npm start
 * [Node.js](https://nodejs.org/es/)
 
 ## Documentacion 📚
+
+*[AppTransferencia](https://docs.google.com/document/d/1zkujJerrCidHqzgz9zQPlYm0mr6m57QYFJoyYaKOttE/edit?usp=sharing)
 
 ## Autores ✒️
 * **Alondra Pallas** - [alondrapallas](https://github.com/alondrapallas)
