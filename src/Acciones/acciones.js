@@ -1,5 +1,4 @@
 import store from '../Store';
-
 //Creamos funciones a los onChange para realizar la actualizacion de datos 
 
 export const cambiarEmail = (email) => {
@@ -17,11 +16,12 @@ export const cambiarContraseña = (contraseña) => {
         s.usuario.contraseña = contraseña
     })
 }
-export const cambiarDinero = (dinero) => {
+export const cambiarMonto = (monto) => {
     store.update(s =>{
-        s.usuario.dinero = dinero
+        s.monto = monto
     })
 }
+
 export const guardarUsuario = (usuario) => {
     store.update(s => {
         s.usuario = usuario
@@ -30,6 +30,11 @@ export const guardarUsuario = (usuario) => {
 export const guardarReceptor = (receptor) => {
     store.update(s => {
         s.receptor = receptor
+    })
+}
+export const error = (error) => {
+    store.update(s => {
+        s.error = error
     })
 }
 export const autenticado = (autenticado) => {
@@ -45,10 +50,5 @@ export const verificar = (verificar) => {
 export const activeTab = (activeTab) =>{
     store.update(s => {
         s.activeTab = activeTab
-    })
-}
-export const collapse = (collapse) =>{
-    store.update(s => {
-        s.collapse = collapse
     })
 }

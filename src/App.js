@@ -19,7 +19,9 @@ class App extends Component {
     return (
       <main>
         {autenticado &&
-          (<Perfil />)
+          (
+          <Perfil />
+          )
         }
         {!autenticado &&
           (<Login />)

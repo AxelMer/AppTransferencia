@@ -7,13 +7,18 @@ const store = createStore({
         contraseña: '',
         dinero: 0 ,
     },
-    receptor:'',
+    receptor:{
+        Rename:'',
+        Reid:'',
+        Reemail:'',
+        Redinero: '',
+    },
+    monto:'',
     user: null,
     autenticado: false,
     verificar: false,
     activeTab: '1',
     dropdownOpen: false, 
-    collapse: false,
  });
 
  export default store;

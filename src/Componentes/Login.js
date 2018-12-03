@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row, Button, Form, FormGroup, Label, Input, 
-TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
+TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
 import classnames from 'classnames';
 import '../App.css';
 import firebase from '../Database/firebase';
@@ -37,16 +37,17 @@ CrearCuenta(e){
                     name: displayName,
                     email: email,
                     contraseña: contraseña,
-                    dinero: 0,
+                    dinero: 1000,
             }).then(function(exito){
                             console.log("Documento creado!");
                         })
-                        .catch(function(error) {
-                            console.error("Error writing document: ", error);
+                        .catch(function(err) {
+                            console.error("Error writing document: ", err);
                         });
     })
-    .catch((error) => {
-        console.log(error);
+    .catch((err) => {
+        alert(err)
+        console.log(err);
       })
 }
 IniciarSesion(e){
@@ -55,6 +56,7 @@ IniciarSesion(e){
         firebase.auth().signInWithEmailAndPassword(email, contraseña)
         .then((u)=>{
         }).catch((error) => {
+            alert(error)
             console.log(error);
           });
 }
@@ -109,12 +111,13 @@ render() {
                         </Col>
                         <Col md={8}>
                             <FormGroup>
-                                <Input onChange={this.cambiarContraseña} type="text" name="password" id="examplePassword" placeholder="Contraseña" />
+                                <Input onChange={this.cambiarContraseña} type="password" name="password" id="examplePassword" placeholder="Contraseña" />
                             </FormGroup>
                         </Col>
                     </Row>
                     <Button type="submit" onClick={this.IniciarSesion}>Ingresar</Button>
                 </Form>
+                <hr/>
             </TabPane>
             <TabPane tabId="2">
                 <Form>
@@ -134,6 +137,7 @@ render() {
                     </Row>
                     <Button type="submit" onClick={this.CrearCuenta}>Crear Cuenta</Button>
                 </Form>
+                <hr/>
             </TabPane>
         </TabContent>
         </div>

@@ -1,11 +1,12 @@
 import React from 'react';
 import {InputGroup, InputGroupAddon, Input, Card, CardHeader, CardBody,
-CardTitle, CardText, Col, Button } from 'reactstrap';
+CardTitle, CardText, Col, Button, Alert } from 'reactstrap';
+import swal from 'sweetalert2'
 import Header from './header';
 import store from '../Store/index';
 import firebase from '../Database/firebase';
-import { verificar, guardarReceptor } from '../Acciones/acciones';
-import { cambiarDinero, cambiarEmail, cambiarNombre, guardarUsuario } from '../Acciones/acciones';
+import VistaUsuario from './modoPrueba';
+import { verificar, cambiarMonto, guardarUsuario, guardarReceptor  } from '../Acciones/acciones';
 
 export default class Perfil extends React.Component{
 constructor(props) {
@@ -39,7 +40,6 @@ componentDidMount() {
                         dinero: lista[i].dinero ,
                     }
                     guardarUsuario(data)
-                    console.log(data)
              break;
         }else{
         }
@@ -48,29 +48,25 @@ componentDidMount() {
 
         });  
 };
-cambiarDinero(event){
-    const nuevoDinero = event.target.value;
-    cambiarDinero(nuevoDinero);
-}
-cambiarEmail(event){
-    const nuevoEmail = event.target.value;
-    cambiarEmail(nuevoEmail);
-}
-cambiarNombre(event){
-    const nuevoNombre = event.target.value;
-    cambiarNombre(nuevoNombre);
+
+cambiarMonto(event){
+    const nuevoMonto = event.target.value;
+    cambiarMonto(nuevoMonto);
 }
 
 validacionCampo(){
     //Comprobamos que los campos esten completos
     //definimos la estructura del ingreso de datos con un regex
+    const { email } = store.getState().usuario;
     const buscarEmail = document.getElementById("buscaremail").value;
     var regex = /[A-Za-z]+@+[A-Za-z]+.+[A-Za-z]/;
     if((buscarEmail.length > 0) &&
-       (regex.test(buscarEmail))){
+       (regex.test(buscarEmail)) &&
+       (buscarEmail !== email)){
            this.verificarEmail();
      }else{
-        alert("El formato de email ejemplo@gmail.com");
+        alert("Verifique que el email ingresado sea el correcto");
+        verificar(false)
      }
 }
 
@@ -79,29 +75,57 @@ verificarEmail(){
     var dato = document.getElementById("buscaremail").value;
     const list = this.state.ListaDatos;
         for(var i = 0, len = list.length; i < len; i++) {
-            if (list[i].email === dato ) {
+            if (list[i].email === dato )  {
                 verificar(true)
-                guardarReceptor(list[i].uid)
-                console.log("Datos", dato, "+", list[i].email, `+`, list[i].uid)
+                var data = {
+                    Reid: list[i].uid,
+                    Rename: list[i].name,
+                    Redinero: list[i].dinero ,
+                    Reemail:list[i].email,
+                }
+                guardarReceptor(data)
          break;
     }else{
+        console.log("Error")
         verificar(false)
     }
     } 
 }
+
 enviarDinero(){
     const { dinero, uid } = store.getState().usuario;
-    const { receptor } = store.getState();
-    const monto = document.getElementById("enviarDinero").value;
+    const { Redinero, Reid } = store.getState().receptor;
+    const { monto } = store.getState();
     var result = dinero - monto;
+    var suma = parseInt(Redinero) + parseInt(monto);
     if((dinero > 0 ) && 
-    (monto <= dinero))
+    (monto <= dinero) &&
+    monto > 0)
     {
-    firebase.database().ref(`usuarios/${receptor}`).update({
-            dinero: monto,
+    firebase.database().ref(`usuarios/${Reid}`).update({
+            dinero: suma,
     }).then(function(exito){
-                    alert("Transferencia exitosa");
-                    window.location.reload(true);
+        let timerInterval
+        swal({
+          title: 'Realizando Envio',
+          timer: 3000,
+          allowOutsideClick: false,
+          onOpen: () => {
+            swal.showLoading()
+          },
+          onClose: () => {
+            clearInterval(timerInterval)
+          }
+        }).then((result) => {
+          if (
+            // Read more about handling dismissals
+            result.dismiss === swal.DismissReason.timer
+          ) {
+            window.location.reload(true)
+            verificar(false);
+            console.log('I was closed by the timer')
+          }
+        })
                 })
                 .catch(function(error) {
                     console.error("Error al enviar ", error);
@@ -114,7 +138,7 @@ enviarDinero(){
     }
 }
 
-    render(){
+render(){
         const { uid, displayName, email, dinero } = store.getState().usuario;
         const { verificar } = store.getState();
         return(
@@ -126,7 +150,7 @@ enviarDinero(){
                             <hr/><br/>   
                             <Col sm="12">
                             <Card>
-                                <CardHeader>Dinero Disponible</CardHeader>
+                                <CardHeader>Saldo Disponible</CardHeader>
                                 <CardBody>
                                 <CardTitle>$ {dinero}</CardTitle>
                                 <CardText></CardText>
@@ -166,6 +190,9 @@ enviarDinero(){
                                 <hr/>
                                 <div>
                                     <h2>Realizar una tranferencia:</h2>
+                                    <Alert color="dark">
+                                       Modo Prueba usar Email: <b>prueba@gmail.com</b>
+                                    </Alert>
                                     <InputGroup>
                                         <Input id="buscaremail" placeholder="Ingrese email al que desea enviar" />
                                         <InputGroupAddon addonType="append">
@@ -181,7 +208,7 @@ enviarDinero(){
                                                 <Col md={8}>
                                                 <InputGroup>
                                                     <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-                                                    <Input id="enviarDinero" placeholder="Ingrese el Monto a enviar" type="number" step="1" />
+                                                    <Input id="enviarDinero" onChange={this.cambiarMonto} placeholder="Ingrese el Monto a enviar" type="text" step="1" />
                                                     <Button color="secondary" onClick={this.enviarDinero}>Enviar</Button>
                                                 </InputGroup>
                                                 </Col>
@@ -192,6 +219,8 @@ enviarDinero(){
                                                 (<div></div>)
                                               }
                                     </div>
+                                    <hr/>
+                                    <VistaUsuario/>
                             </div>
                             </div>
                         </div>
