@@ -4,13 +4,13 @@ Proyecto final de Taller de Práctica II de 2do año. Aplicacion para realizar t
 
 ## Contenido
 
-- [Live Demo](#live-demo)
-- [Caracteristicas](#caracteristicas)
-- [Instalación Local](#instalación-local)
+-[Live Demo](#live-demo)
+-[Caracteristicas](#caracteristicas)
+-[Instalación Local](#instalacion-local)
   -[Librerias](#librerias)
-- [Requisitos](#requisitos)
-- [Documentacion](#documentacion)
-- [Autores](#autores)
+-[Requisitos](#requisitos)
+-[Documentacion](#documentacion)
+-[Autores](#autores)
 
 ## Live Demo
 
@@ -34,7 +34,10 @@ npm install
 npm start
 ```
 ### Librerias
-
+* [React.js]()
+* []()
+* []()
+* []()
 
 ## Herramientas usadas 📝
 
@@ -43,7 +46,7 @@ npm start
 
 ## Documentacion 📚
 
-*[AppTransferencia](https://docs.google.com/document/d/1zkujJerrCidHqzgz9zQPlYm0mr6m57QYFJoyYaKOttE/edit?usp=sharing)
+* [AppTransferencia](https://docs.google.com/document/d/1zkujJerrCidHqzgz9zQPlYm0mr6m57QYFJoyYaKOttE/edit?usp=sharing)
 
 ## Autores ✒️
 * **Alondra Pallas** - [alondrapallas](https://github.com/alondrapallas)
