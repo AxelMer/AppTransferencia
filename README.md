@@ -6,8 +6,8 @@ Proyecto final de Taller de Práctica II de 2do año. Aplicacion para realizar t
 
 - [Live Demo](#live-demo)
 - [Caracteristicas](#caracteristicas)
-- [Instalacion Local](#instalacion-local)
   - [Librerias](#librerias)
+- [Instalacion Local](#instalacion-local)
 - [Herramientas usadas](#herramientas-usadas)
 - [Documentacion](#documentacion)
 - [Autores](#autores)
@@ -22,6 +22,15 @@ WebLink: https://apptransferencia.firebaseapp.com/
 - Login y logout
 - enviar y recibir.
 
+### Librerias
+* [React.js](https://reactjs.org/)
+* [Reactstrap](https://reactstrap.github.io)
+* [Material-ui](https://material-ui.com/)
+* [Bootstrap](https://getbootstrap.com/)
+* [sweetalert2](https://sweetalert2.github.io/)
+* [Pure Store](https://www.npmjs.com/package/pure-store)
+* [Firebase](https://firebase.google.com/)
+
 ## Instalacion Local
 
 Para realizar una instalacion de forma local
@@ -34,16 +43,11 @@ npm install
 npm start
 ```
 
-### Librerias
-* [React.js]()
-* []()
-* []()
-* []()
 
 ## Herramientas usadas
 
 * [Node.js](https://nodejs.org/es/)
-* [Firebase](https://firebase.google.com/)
+* [Visual Studio Code](https://code.visualstudio.com/)
 
 ## Documentacion
 
