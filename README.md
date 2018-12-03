@@ -39,16 +39,16 @@ npm start
 * []()
 * []()
 
-## Herramientas usadas📝
+## Herramientas usadas
 
 * [Node.js](https://nodejs.org/es/)
 * [Firebase](https://firebase.google.com/)
 
-## Documentacion📚
+## Documentacion
 
 * [AppTransferencia](https://docs.google.com/document/d/1zkujJerrCidHqzgz9zQPlYm0mr6m57QYFJoyYaKOttE/edit?usp=sharing)
 
-## Autores✒️
+## Autores
 * **Alondra Pallas** - [alondrapallas](https://github.com/alondrapallas)
 * **Georgina Valenzano**  - [shorshii](https://github.com/shorshii)
 * **Axel Mercado**  - [Ammercado](https://github.com/Ammercado)
