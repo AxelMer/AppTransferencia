@@ -22,7 +22,7 @@ WebLink: https://apptransferencia.firebaseapp.com/
 - Login y logout
 - enviar y recibir.
 
-## Instalación Local
+## Instalación Local🖥
 
 Para realizar una instalacion de forma local
 
