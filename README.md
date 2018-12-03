@@ -6,9 +6,9 @@ Proyecto final de Taller de Práctica II de 2do año. Aplicacion para realizar t
 
 - [Live Demo](#live-demo)
 - [Caracteristicas](#caracteristicas)
-- [Instalación Local](#instalacion-local)
+- [Instalacion Local](#instalacion-local)
   - [Librerias](#librerias)
-- [Requisitos](#requisitos)
+- [Herramientas usadas](#herramientas-usadas)
 - [Documentacion](#documentacion)
 - [Autores](#autores)
 
@@ -22,7 +22,7 @@ WebLink: https://apptransferencia.firebaseapp.com/
 - Login y logout
 - enviar y recibir.
 
-## Instalación Local
+## Instalacion Local
 
 Para realizar una instalacion de forma local
 
