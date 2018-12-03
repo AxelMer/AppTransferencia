@@ -1,54 +1,58 @@
+# AppTransferencia
+
+Proyecto final de Taller de Práctica II de 2do año. Aplicacion que realicè transferencia entre usuarios.
 
 ## Contenido
 
 - [Live Demo](#Live-Demo)
 - [Introduccion](#Introduccion)
-- [Folder Structure](#folder-structure)
+- [Objetivo](#Objetivo)
+- [Documentacion](#Documentacion)
+- [Autores](#Autores)
 
 ## Live Demo
 
 WebLink: https://apptransferencia.firebaseapp.com/
 
-## Introduccion
 
-We are always open to [your feedback](https://github.com/facebook/create-react-app/issues).
+## Comenzando 🚀
 
-## Folder Structure
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-After creation, your project should look like this:
+Mira **Deployment** para conocer como desplegar el proyecto.
+
+
+### Instalación 🔧
+
+_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+
+_Dí cómo será ese paso_
 
 ```
-my-app/
-  README.md
-  node_modules/
-  package.json
-  public/
-    index.html
-    favicon.ico
-  src/
-    App.css
-    App.js
-    App.test.js
-    index.css
-    index.js
-    logo.svg
+Da un ejemplo
 ```
 
-For the project to build, **these files must exist with exact filenames**:
+_Y repite_
 
-- `public/index.html` is the page template;
-- `src/index.js` is the JavaScript entry point.
+```
+hasta finalizar
+```
 
-You can delete or rename the other files.
+_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
 
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
+## Construido con 🛠️
 
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
+_Menciona las herramientas que utilizaste para crear tu proyecto_
 
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
+* [Maven](https://maven.apache.org/) - Manejador de dependencias
+* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
+## Autores ✒️
 
-If you have Git installed and your project is not part of a larger repository, then a new repository will be initialized resulting in an additional `.git/` top-level directory.
+_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
+* **Alondra Pallas** - [alondrapallas](https://github.com/alondrapallas)
+* **Georgina Valenzano**  - [shorshii](https://github.com/shorshii)
+* **Axel Mercado**  - [Ammercado](https://github.com/Ammercado)
+
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
