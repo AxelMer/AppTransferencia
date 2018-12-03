@@ -31,8 +31,7 @@ cerrarSesion(e) {
       const { dropdownOpen } = store.getState();
       const { displayName } =  store.getState().usuario;
     return (
-        <header>
-            <div className="App-header">
+            <header className="App-header">
                 <Navbar>
                 <NavbarBrand href="/">App Transferencia</NavbarBrand>
                     <Nav>
@@ -50,8 +49,7 @@ cerrarSesion(e) {
                         </NavLink> 
                     </Nav>
                 </Navbar>
-            </div>
-       </header>
+            </header>
     );
 }
 }

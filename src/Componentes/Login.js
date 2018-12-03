@@ -1,8 +1,9 @@
 import React from "react";
-import { Col, Row, Button, Form, FormGroup, Label, Input, 
+import { Col, Row, Button, Form, FormGroup, Input, 
 TabContent, TabPane, Nav, NavItem, NavLink} from 'reactstrap';
 import classnames from 'classnames';
 import '../App.css';
+import logo from '../intercambio.svg';
 import firebase from '../Database/firebase';
 import store from '../Store/index';
 import { activeTab, cambiarNombre, cambiarEmail, cambiarContraseña } from '../Acciones/acciones';
@@ -79,69 +80,72 @@ cambiarNombre(event){
 render() {
     const { activeTab } = store.getState();
     return (
-    <div className="form-main">
-        <div className="form-div">
-        <Nav tabs>
-            <NavItem>
-                <NavLink
-                    className={classnames({ active: activeTab === '1' })}
-                    onClick={() => { this.toggle('1'); }}
-                    >
-                    Iniciar Sesion
-                </NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink
-                    className={classnames({ active: activeTab === '2' })}
-                    onClick={() => { this.toggle('2'); }}
-                    >
-                    Crear Cuenta
-                </NavLink>
-            </NavItem>
-        </Nav>
-        <TabContent activeTab={activeTab}>
-            <TabPane tabId="1">
-                <Form>
-                <Label></Label>
-                    <Row form>
-                        <Col md={8}>
-                            <FormGroup>
-                                <Input onChange={this.cambiarEmail} type="text" name="email" id="exampleEmail" placeholder="Correo electronico" />
-                            </FormGroup>
-                        </Col>
-                        <Col md={8}>
-                            <FormGroup>
-                                <Input onChange={this.cambiarContraseña} type="password" name="password" id="examplePassword" placeholder="Contraseña" />
-                            </FormGroup>
-                        </Col>
-                    </Row>
-                    <Button type="submit" onClick={this.IniciarSesion}>Ingresar</Button>
-                </Form>
-                <hr/>
-            </TabPane>
-            <TabPane tabId="2">
-                <Form>
-                <Label></Label>
-                    <Row form>
-                        <Col md={8}>
-                            <FormGroup>
-                                <Input onChange={this.cambiarNombre} type="text" name="nombreyape" id="nombreyape" placeholder="Nombre Y Apellido" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Input  onChange={this.cambiarEmail} type="text" name="email" id="email" placeholder="Correo Electronico" />
-                            </FormGroup>
-                            <FormGroup>
-                                <Input onChange={this.cambiarContraseña}  type="password" name="contraseña" id="econtraseña" placeholder="Contraseña" />
-                            </FormGroup>
-                        </Col>
-                    </Row>
-                    <Button type="submit" onClick={this.CrearCuenta}>Crear Cuenta</Button>
-                </Form>
-                <hr/>
-            </TabPane>
-        </TabContent>
-        </div>
-    </div> 
+            <div className="form-main">
+                <div className="form-div">
+                <img src={logo} className="App-logo" alt="logo" />
+                <Nav tabs>
+                    <NavItem>
+                        <NavLink
+                            className={classnames({ active: activeTab === '1' })}
+                            onClick={() => { this.toggle('1'); }}
+                            >
+                            Iniciar Sesion
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
+                        <NavLink
+                            className={classnames({ active: activeTab === '2' })}
+                            onClick={() => { this.toggle('2'); }}
+                            >
+                            Crear Cuenta
+                        </NavLink>
+                    </NavItem>
+                </Nav>
+                <TabContent activeTab={activeTab}>
+                    <TabPane tabId="1">
+                    <div className="container">
+                        <Form>
+                            <Row form>
+                                <Col md={10}>
+                                    <FormGroup>
+                                        <Input onChange={this.cambiarEmail} type="text" name="email" id="exampleEmail" placeholder="Correo electronico" />
+                                    </FormGroup>
+                                </Col>
+                                <Col md={10}>
+                                    <FormGroup>
+                                        <Input onChange={this.cambiarContraseña} type="password" name="password" id="examplePassword" placeholder="Contraseña" />
+                                    </FormGroup>
+                                </Col>
+                            </Row>
+                            <hr/>
+                            <Button type="submit" onClick={this.IniciarSesion}>Ingresar</Button>
+                        </Form>
+                        </div>
+                    </TabPane>
+                    <TabPane tabId="2">
+                        <div className="container">
+                            <Row form>
+                                <Col md={10}>
+                                    <FormGroup>
+                                        <Input onChange={this.cambiarNombre} type="text" name="nombreyape" id="nombreyape" placeholder="Nombre Y Apellido" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Input  onChange={this.cambiarEmail} type="text" name="email" id="email" placeholder="Correo Electronico" />
+                                    </FormGroup>
+                                    <FormGroup>
+                                        <Input onChange={this.cambiarContraseña}  type="password" name="contraseña" id="econtraseña" placeholder="Contraseña" />
+                                    </FormGroup>
+                                </Col>
+                            </Row>
+                             <hr/>
+                             <Col md={10} >
+                             <Button type="submit" onClick={this.CrearCuenta}>Crear Cuenta</Button>
+                             </Col>
+                        </div>
+                    </TabPane>
+                </TabContent>
+                </div>
+            </div> 
     )
 }
 }

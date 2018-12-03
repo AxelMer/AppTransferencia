@@ -142,9 +142,9 @@ render(){
         const { uid, displayName, email, dinero } = store.getState().usuario;
         const { verificar } = store.getState();
         return(
-            <main>
+            <div>
                 <Header/>
-                <div>
+                <div className="contenedor">
                     <div className="row">
                         <div className="col-sm-3">
                             <hr/><br/>   
@@ -227,7 +227,7 @@ render(){
                         </div>
                     </div>
                 </div>
-            </main>
+            </div>
         );
     }
 }

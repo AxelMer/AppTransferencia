@@ -17,7 +17,7 @@ class App extends Component {
   render() {  
     const { autenticado } = store.getState();
     return (
-      <main>
+      <div className="App">
         {autenticado &&
           (
           <Perfil />
@@ -26,7 +26,7 @@ class App extends Component {
         {!autenticado &&
           (<Login />)
         }
-      </main>
+      </div>
     );
   }}
 
