@@ -4,16 +4,16 @@ Proyecto final de Taller de Práctica II de 2do año. Aplicacion para realizar t
 
 ## Contenido
 
-- [Live Demo](#Live-Demo)
-- [Caracteristicas](#Caracteristicas)
-- [Objetivo](#Objetivo)
-- [Documentacion](#Documentacion)
-- [Autores](#Autores)
+- [Live Demo](#live-demo)
+- [Caracteristicas](#caracteristicas)
+- [Instalacion Local](#instalacion-local)
+  - [Requisitos](#requisistos)
+- [Documentacion](#documentacion)
+- [Autores](#autores)
 
 ## Live Demo
 
 WebLink: https://apptransferencia.firebaseapp.com/
-
 
 ## Caracteristicas 📝
 
@@ -21,8 +21,8 @@ WebLink: https://apptransferencia.firebaseapp.com/
 - Login y logout
 - enviar y recibir.
 
-### Instalación 🔧
-Para abrirlo de forma local 
+## Instalación Local 🔧
+Para realizar una instalacion de forma local
 
 ```
 npm install
@@ -38,6 +38,11 @@ hasta finalizar
 ```
 
 _Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+### Requisitos 📝
+
+* [Node.js](https://nodejs.org/es/)
+* [Maven](https://maven.apache.org/) 
+* [ROME](https://rometools.github.io/rome/)
 
 ## Herramietnas usadas 🛠️
 * [Visual Studio Code](https://code.visualstudio.com/) - editor de código fuente
