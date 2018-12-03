@@ -16,13 +16,13 @@ Proyecto final de Taller de Práctica II de 2do año. Aplicacion para realizar t
 
 WebLink: https://apptransferencia.firebaseapp.com/
 
-## Caracteristicas📝
+## Caracteristicas
 
 - Registro de usuarios
 - Login y logout
 - enviar y recibir.
 
-## Instalación Local🔧
+## Instalación Local
 
 Para realizar una instalacion de forma local
 
@@ -33,6 +33,7 @@ npm install
 ```
 npm start
 ```
+
 ### Librerias
 * [React.js]()
 * []()
@@ -48,7 +49,8 @@ npm start
 
 * [AppTransferencia](https://docs.google.com/document/d/1zkujJerrCidHqzgz9zQPlYm0mr6m57QYFJoyYaKOttE/edit?usp=sharing)
 
-## Autores
+## Autores🖊
+
 * **Alondra Pallas** - [alondrapallas](https://github.com/alondrapallas)
 * **Georgina Valenzano**  - [shorshii](https://github.com/shorshii)
 * **Axel Mercado**  - [Ammercado](https://github.com/Ammercado)
