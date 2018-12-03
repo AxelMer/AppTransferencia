@@ -4,13 +4,13 @@ Proyecto final de Taller de Práctica II de 2do año. Aplicacion para realizar t
 
 ## Contenido
 
--[Live Demo](#live-demo)
--[Caracteristicas](#caracteristicas)
--[Instalación Local](#instalacion-local)
-  -[Librerias](#librerias)
--[Requisitos](#requisitos)
--[Documentacion](#documentacion)
--[Autores](#autores)
+- [Live Demo](#live-demo)
+- [Caracteristicas](#caracteristicas)
+- [Instalación Local](#instalacion-local)
+  - [Librerias](#librerias)
+- [Requisitos](#requisitos)
+- [Documentacion](#documentacion)
+- [Autores](#autor)
 
 ## Live Demo
 
