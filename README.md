@@ -51,7 +51,7 @@ npm start
 
 ## Documentacion
 
-* [AppTransferencia](https://docs.google.com/document/d/1zkujJerrCidHqzgz9zQPlYm0mr6m57QYFJoyYaKOttE/edit?usp=sharing)
+* [AppTransferencia](https://drive.google.com/file/d/1V3La9_7DwgW0Bi6ggmeF7dZWto4QIGij/view?usp=sharing)
 
 ## Autores
 
